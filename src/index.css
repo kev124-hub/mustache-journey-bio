@@ -1,5 +1,8 @@
+/* 1. External Imports must be at the top */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Inter:wght@100..900&display=swap');
 @import "tailwindcss";
 
+/* 2. Theme Configuration (Tailwind v4 style) */
 @theme {
   /* Brand Colors */
   --color-brand-creme: #F9F8F4;
@@ -8,8 +11,7 @@
   --color-brand-gold: #BFA37E;
   --color-brand-charcoal: #2C2C2C;
   --color-brand-ink: #1a1a1a;
-  --animate-duration: 1000ms;
-  
+
   /* Typography */
   --font-serif: "Playfair Display", serif;
   --font-sans: "Inter", sans-serif;
@@ -17,7 +19,48 @@
   /* Spacing & Utilities */
   --letter-spacing-luxury: 0.3em;
   --letter-spacing-ultra: 0.5em;
+  
+  /* Animation Settings */
+  --animate-duration: 1000ms;
 }
 
-/* Ensure fonts are loaded if not in HTML */
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Inter:wght@100..900&display=swap');
+/* 3. Manual Animation Utilities (Ensures compatibility) */
+@utility animate-in {
+  animation-duration: 1000ms;
+  animation-fill-mode: both;
+}
+
+@utility fade-in {
+  animation-name: fadeIn;
+}
+
+@utility slide-in-from-bottom-4 {
+  animation-name: slideInBottom4;
+}
+
+@utility slide-in-from-bottom-8 {
+  animation-name: slideInBottom8;
+}
+
+/* 4. Keyframes for Animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideInBottom4 {
+  from { transform: translateY(1rem); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes slideInBottom8 {
+  from { transform: translateY(2rem); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+/* 5. Base Styles */
+@layer base {
+  body {
+    @apply bg-brand-creme text-brand-ink antialiased;
+  }
+}
