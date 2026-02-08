@@ -243,40 +243,65 @@ const App = () => {
       </div>
 
       {/* Partnership Inquiry Modal */}
-      {showContact && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/10 backdrop-blur-md" onClick={() => setShowContact(false)}>
-          <div className="bg-white w-full max-w-sm rounded-3xl shadow-2xl overflow-hidden relative border border-brand-creme animate-in zoom-in-95 fade-in duration-300" onClick={(e) => e.stopPropagation()}>
-            <button onClick={() => setShowContact(false)} className="absolute top-6 right-6 p-2 text-gray-400 hover:text-brand-ink hover:bg-brand-creme rounded-full transition-all">
-              <X className="w-5 h-5" />
-            </button>
-            <div className="p-10 text-center">
-              <h2 className="font-serif text-2xl mb-2 text-brand-ink">Partnership Inquiry</h2>
-              <p className="text-[10px] text-gray-400 uppercase tracking-luxury mb-8">Confidential Collaboration Request</p>
+      {/* Partnership Inquiry Modal - Glassmorphism Edition */}
+{showContact && (
+  <div 
+    className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-brand-charcoal/20 backdrop-blur-md animate-in fade-in duration-500" 
+    onClick={() => setShowContact(false)}
+  >
+    <div 
+      className="bg-white/70 backdrop-blur-2xl w-full max-w-sm rounded-[2.5rem] shadow-[0_20px_50px_rgba(0,0,0,0.1)] overflow-hidden relative border border-white/40 animate-in zoom-in-95 duration-300" 
+      onClick={(e) => e.stopPropagation()}
+    >
+      {/* Decorative inner glow for the "Glass" effect */}
+      <div className="absolute inset-0 bg-gradient-to-br from-white/20 to-transparent pointer-events-none"></div>
 
-              {inquiryStatus === 'success' ? (
-                <div className="py-12 flex flex-col items-center">
-                  <CheckCircle2 className="w-12 h-12 text-brand-gold mb-4" />
-                  <p className="text-sm font-serif italic text-gray-600">Dispatch Received. Talk soon.</p>
-                </div>
-              ) : (
-                <form className="space-y-5 text-left" onSubmit={handleInquiry}>
-                  <div>
-                    <label className="block text-[9px] font-bold uppercase tracking-[0.2em] text-brand-gold mb-1.5">Entity / Property Name</label>
-                    <input name="property" type="text" required className="w-full border-b border-brand-stone py-2 text-sm focus:outline-none focus:border-brand-gold bg-transparent" placeholder="e.g., The Aman Kyoto" />
-                  </div>
-                  <div>
-                    <label className="block text-[9px] font-bold uppercase tracking-[0.2em] text-brand-gold mb-1.5">Your Email</label>
-                    <input name="email" type="email" required className="w-full border-b border-brand-stone py-2 text-sm focus:outline-none focus:border-brand-gold bg-transparent" placeholder="contact@brand.com" />
-                  </div>
-                  <button disabled={inquiryStatus === 'loading'} className="w-full mt-8 bg-brand-charcoal text-white py-4 rounded-2xl text-[10px] font-bold uppercase tracking-[0.4em] flex items-center justify-center gap-3 shadow-xl hover:bg-black transition-all disabled:opacity-50">
-                    <Send className="w-3 h-3" /> {inquiryStatus === 'loading' ? 'Dispatching...' : 'Send Inquiry'}
-                  </button>
-                </form>
-              )}
-            </div>
+      <button 
+        onClick={() => setShowContact(false)} 
+        className="absolute top-6 right-6 p-2 text-brand-ink/40 hover:text-brand-ink hover:bg-white/50 rounded-full transition-all z-10"
+      >
+        <X className="w-5 h-5" />
+      </button>
+
+      <div className="p-10 text-center relative z-0">
+        <h2 className="font-serif text-2xl mb-2 text-brand-ink">Partnership Inquiry</h2>
+        <p className="text-[10px] text-brand-ink/50 uppercase tracking-luxury mb-8">Confidential Collaboration Request</p>
+
+        {inquiryStatus === 'success' ? (
+          <div className="py-12 flex flex-col items-center animate-in zoom-in">
+            <CheckCircle2 className="w-12 h-12 text-brand-gold mb-4" />
+            <p className="text-sm font-serif italic text-brand-ink/70">Dispatch Received. Talk soon.</p>
           </div>
-        </div>
-      )}
+        ) : (
+          <form className="space-y-6 text-left" onSubmit={handleInquiry}>
+            <div className="group">
+              <label className="block text-[9px] font-bold uppercase tracking-[0.2em] text-brand-gold mb-1.5 transition-colors group-focus-within:text-brand-ink">Entity / Property Name</label>
+              <input 
+                name="property" type="text" required 
+                className="w-full border-b border-brand-stone/50 py-2 text-sm focus:outline-none focus:border-brand-gold bg-transparent placeholder:text-brand-ink/20" 
+                placeholder="e.g., The Aman Kyoto" 
+              />
+            </div>
+            <div className="group">
+              <label className="block text-[9px] font-bold uppercase tracking-[0.2em] text-brand-gold mb-1.5 transition-colors group-focus-within:text-brand-ink">Your Email</label>
+              <input 
+                name="email" type="email" required 
+                className="w-full border-b border-brand-stone/50 py-2 text-sm focus:outline-none focus:border-brand-gold bg-transparent placeholder:text-brand-ink/20" 
+                placeholder="contact@brand.com" 
+              />
+            </div>
+            <button 
+              disabled={inquiryStatus === 'loading'} 
+              className="w-full mt-8 bg-brand-charcoal text-white py-4.5 rounded-full text-[10px] font-bold uppercase tracking-[0.4em] flex items-center justify-center gap-3 shadow-xl hover:bg-black hover:scale-[1.02] transition-all disabled:opacity-50"
+            >
+              <Send className="w-3 h-3" /> {inquiryStatus === 'loading' ? 'Dispatching...' : 'Send Inquiry'}
+            </button>
+          </form>
+        )}
+      </div>
+    </div>
+  </div>
+)}
     </div>
   );
 };
