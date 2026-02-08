@@ -8,7 +8,8 @@
   --color-brand-gold: #BFA37E;
   --color-brand-charcoal: #2C2C2C;
   --color-brand-ink: #1a1a1a;
-
+  --animate-duration: 1000ms;
+  
   /* Typography */
   --font-serif: "Playfair Display", serif;
   --font-sans: "Inter", sans-serif;

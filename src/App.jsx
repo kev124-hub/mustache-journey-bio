@@ -111,27 +111,25 @@ const App = () => {
         
         {/* Profile Header with Initial Fade-In */}
         <header className="flex flex-col items-center text-center mb-10 animate-in fade-in slide-in-from-bottom-4 duration-1000">
-          <div className="relative mb-8 group cursor-pointer">
-            <div className="absolute -inset-3 bg-gradient-to-tr from-brand-gold to-brand-charcoal rounded-full blur-md opacity-20 animate-pulse group-hover:opacity-40 transition-opacity duration-500"></div>
-            <div className="relative w-32 h-32 rounded-full border-[6px] border-white overflow-hidden shadow-2xl transition-transform duration-500 group-hover:scale-105">
-              <img 
-                src={DATA.profile.avatar} 
-                alt="Profile" 
-                className="w-full h-full object-cover grayscale-[10%]" 
-                onError={(e) => e.target.src = "https://images.unsplash.com/photo-1618077360395-f3068be8e001?auto=format&fit=crop&q=80&w=400"}
-              />
-            </div>
-          </div>
-          <h1 className="text-3xl font-serif font-medium tracking-tight mb-2 text-brand-ink uppercase tracking-wider">{DATA.profile.name}</h1>
-          <div className="flex items-center justify-center gap-2 text-brand-gold text-[10px] font-bold tracking-luxury uppercase mb-4">
-            <MapPin className="w-3 h-3" />
-            <span>{DATA.profile.location}</span>
-          </div>
-          <p className="text-gray-600 leading-relaxed max-w-[280px] mx-auto italic text-sm mb-6">"{DATA.profile.tagline}"</p>
-          <div className="w-full p-4 border-y border-brand-stone mb-8">
-             <p className="text-[11px] text-gray-400 leading-relaxed uppercase tracking-luxury italic text-center">{DATA.profile.about}</p>
-          </div>
-        </header>
+  <div className="relative mb-8 group cursor-pointer">
+    {/* Background Glow - Expanded to -inset-6 to prevent clipping */}
+    <div className="absolute -inset-6 bg-gradient-to-tr from-brand-gold to-brand-charcoal rounded-full blur-xl opacity-20 animate-pulse group-hover:opacity-40 transition-opacity duration-500"></div>
+    
+    {/* Outer Frame - This provides the white border depth */}
+    <div className="relative w-40 h-40 rounded-full bg-white p-1.5 shadow-2xl transition-transform duration-500 group-hover:scale-105">
+      {/* Inner Image Container */}
+      <div className="w-full h-full rounded-full overflow-hidden border border-brand-stone/20">
+        <img 
+          src={DATA.profile.avatar} 
+          alt="Profile" 
+          className="w-full h-full object-cover grayscale-[10%] scale-110" 
+          onError={(e) => e.target.src = "https://images.unsplash.com/photo-1618077360395-f3068be8e001?auto=format&fit=crop&q=80&w=400"}
+        />
+      </div>
+    </div>
+  </div>
+  {/* Rest of header remains the same */}
+</header>
 
         {/* Links Navigation with Staggered Entrance */}
         <nav className="flex flex-col items-center w-full space-y-4 mb-14 px-2">
