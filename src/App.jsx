@@ -12,6 +12,9 @@ import {
   CheckCircle2 
 } from 'lucide-react';
 
+/**
+ * CONFIGURATION BLOCK
+ */
 const DATA = {
   profile: {
     name: "Mustache Journey",
@@ -106,10 +109,11 @@ const App = () => {
 
       <div className={`relative w-full max-w-md bg-brand-paper min-h-screen px-6 pt-16 pb-24 shadow-sm transition-all duration-700 ${showContact ? 'blur-lg scale-95 opacity-40' : 'opacity-100'}`}>
         
-        <header className="flex flex-col items-center text-center mb-10">
-          <div className="relative mb-6 group cursor-pointer">
-            <div className="absolute -inset-2 bg-gradient-to-tr from-brand-gold to-brand-charcoal rounded-full blur-md opacity-20 animate-pulse group-hover:opacity-40 transition-opacity duration-500"></div>
-            <div className="relative w-28 h-28 rounded-full border-4 border-white overflow-hidden shadow-2xl transition-transform duration-500 group-hover:scale-105">
+        {/* Profile Header with Initial Fade-In */}
+        <header className="flex flex-col items-center text-center mb-10 animate-in fade-in slide-in-from-bottom-4 duration-1000">
+          <div className="relative mb-8 group cursor-pointer">
+            <div className="absolute -inset-3 bg-gradient-to-tr from-brand-gold to-brand-charcoal rounded-full blur-md opacity-20 animate-pulse group-hover:opacity-40 transition-opacity duration-500"></div>
+            <div className="relative w-32 h-32 rounded-full border-[6px] border-white overflow-hidden shadow-2xl transition-transform duration-500 group-hover:scale-105">
               <img 
                 src={DATA.profile.avatar} 
                 alt="Profile" 
@@ -129,42 +133,47 @@ const App = () => {
           </div>
         </header>
 
-        {/* Links Navigation */}
-<nav className="flex flex-col items-center w-full space-y-4 mb-14">
-  {DATA.links.map((link, idx) => (
-    <a
-      key={idx}
-      href={link.type === 'link' ? link.url : undefined}
-      target={link.type === 'link' ? "_blank" : undefined}
-      rel={link.type === 'link' ? "noopener noreferrer" : undefined}
-      onClick={link.type === 'modal' ? (e) => { e.preventDefault(); setShowContact(true); } : undefined}
-      className={`
-        group flex items-center justify-between 
-        w-full max-w-[320px] px-8 py-4 
-        rounded-full border transition-all duration-300 cursor-pointer
-        ${link.highlight 
-          ? 'bg-brand-charcoal border-brand-charcoal text-white shadow-lg hover:bg-black hover:scale-105' 
-          : 'bg-white border-brand-stone text-brand-ink hover:border-brand-gold hover:shadow-md hover:-translate-y-1'
-        }
-      `}
-    >
-      <div className="flex items-center gap-4">
-        <div className={`transition-colors ${link.highlight ? 'text-white/80 group-hover:text-white' : 'text-brand-gold'}`}>
-          {link.icon}
-        </div>
-        <div className="text-left">
-          <div className="font-semibold text-xs tracking-tight">{link.title}</div>
-          <div className={`text-[9px] uppercase tracking-luxury font-bold ${link.highlight ? 'text-white/50' : 'text-gray-400'}`}>
-            {link.subtitle}
-          </div>
-        </div>
-      </div>
-      <ChevronRight className={`w-4 h-4 transition-transform group-hover:translate-x-1 ${link.highlight ? 'text-white/40' : 'text-brand-stone'}`} />
-    </a>
-  ))}
-</nav>
+        {/* Links Navigation with Staggered Entrance */}
+        <nav className="flex flex-col items-center w-full space-y-4 mb-14 px-2">
+          {DATA.links.map((link, idx) => (
+            <a
+              key={idx}
+              href={link.type === 'link' ? link.url : undefined}
+              target={link.type === 'link' ? "_blank" : undefined}
+              rel={link.type === 'link' ? "noopener noreferrer" : undefined}
+              onClick={link.type === 'modal' ? (e) => { e.preventDefault(); setShowContact(true); } : undefined}
+              style={{ animationDelay: `${(idx + 1) * 150}ms` }}
+              className={`
+                group flex items-center justify-between 
+                w-full max-w-[340px] p-5
+                rounded-full border transition-all duration-500 cursor-pointer
+                animate-in fade-in slide-in-from-bottom-8 fill-mode-both
+                ${link.highlight 
+                  ? 'bg-brand-charcoal border-brand-charcoal text-white shadow-xl hover:bg-black hover:scale-[1.03]' 
+                  : 'bg-white border-brand-stone text-brand-ink hover:border-brand-gold hover:shadow-md hover:-translate-y-0.5'
+                }
+              `}
+            >
+              <div className="flex items-center gap-4">
+                <div className={`p-2 rounded-full ${link.highlight ? 'bg-white/10 text-white' : 'bg-brand-creme text-brand-gold'}`}>
+                  {link.icon}
+                </div>
+                <div className="text-left">
+                  <div className={`font-semibold text-sm tracking-tight ${link.highlight ? 'text-white' : 'text-brand-ink'}`}>
+                    {link.title}
+                  </div>
+                  <div className={`text-[9px] uppercase tracking-luxury font-bold mt-0.5 ${link.highlight ? 'text-white/60' : 'text-gray-400'}`}>
+                    {link.subtitle}
+                  </div>
+                </div>
+              </div>
+              <ChevronRight className={`w-4 h-4 transition-transform group-hover:translate-x-1 ${link.highlight ? 'text-white/40' : 'text-brand-stone'}`} />
+            </a>
+          ))}
+        </nav>
 
-        <section className="mb-14 px-1">
+        {/* Portfolio Gallery */}
+        <section className="mb-14 px-1 animate-in fade-in duration-1000 delay-500 fill-mode-both">
           <div className="flex items-center justify-between mb-5 px-1">
             <h2 className="text-[10px] font-bold uppercase tracking-luxury text-brand-gold">The Portfolio</h2>
             <div className="h-[1px] flex-grow ml-4 bg-brand-stone"></div>
@@ -184,7 +193,8 @@ const App = () => {
           </div>
         </section>
 
-        <section className="mb-14 px-1 text-center">
+        {/* Partners Section */}
+        <section className="mb-14 px-1 text-center animate-in fade-in duration-1000 delay-700 fill-mode-both">
            <p className="text-[9px] font-bold uppercase tracking-luxury text-gray-400 mb-4">Trusted By</p>
            <div className="flex flex-wrap justify-center gap-x-6 gap-y-2 opacity-50 grayscale">
               {DATA.partners.map((partner, i) => (
@@ -193,7 +203,8 @@ const App = () => {
            </div>
         </section>
 
-        <section className="mb-16 px-1">
+        {/* Newsletter Section */}
+        <section className="mb-16 px-1 animate-in fade-in slide-in-from-bottom-4 duration-1000 delay-1000 fill-mode-both">
           <div className="bg-brand-creme p-8 rounded-2xl border border-brand-stone relative overflow-hidden flex flex-col items-center">
             <div className="relative z-10 text-center w-full max-w-[280px]">
               <h3 className="font-serif text-2xl mb-1 text-brand-ink">The Sunday Dispatch</h3>
@@ -219,7 +230,8 @@ const App = () => {
           </div>
         </section>
 
-        <footer className="flex flex-col items-center gap-10 mt-auto">
+        {/* Footer Socials */}
+        <footer className="flex flex-col items-center gap-10 mt-auto animate-in fade-in duration-1000 delay-[1200ms] fill-mode-both">
           <div className="flex items-center gap-12">
             <a href={DATA.socials.instagram} target="_blank" rel="noreferrer" className="text-gray-300 hover:text-brand-gold transition-all"><Instagram className="w-6 h-6" /></a>
             <a href={`mailto:${DATA.socials.email}`} className="text-gray-300 hover:text-brand-gold transition-all"><Mail className="w-6 h-6" /></a>
@@ -232,9 +244,10 @@ const App = () => {
         </footer>
       </div>
 
+      {/* Partnership Inquiry Modal */}
       {showContact && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/10 backdrop-blur-md" onClick={() => setShowContact(false)}>
-          <div className="bg-white w-full max-w-sm rounded-3xl shadow-2xl overflow-hidden relative border border-brand-creme" onClick={(e) => e.stopPropagation()}>
+          <div className="bg-white w-full max-w-sm rounded-3xl shadow-2xl overflow-hidden relative border border-brand-creme animate-in zoom-in-95 fade-in duration-300" onClick={(e) => e.stopPropagation()}>
             <button onClick={() => setShowContact(false)} className="absolute top-6 right-6 p-2 text-gray-400 hover:text-brand-ink hover:bg-brand-creme rounded-full transition-all">
               <X className="w-5 h-5" />
             </button>
