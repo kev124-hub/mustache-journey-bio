@@ -129,35 +129,40 @@ const App = () => {
           </div>
         </header>
 
-        <nav className="space-y-4 mb-14">
-          {DATA.links.map((link, idx) => (
-            <a
-              key={idx}
-              href={link.type === 'link' ? link.url : undefined}
-              target={link.type === 'link' ? "_blank" : undefined}
-              rel={link.type === 'link' ? "noopener noreferrer" : undefined}
-              onClick={link.type === 'modal' ? (e) => { e.preventDefault(); setShowContact(true); } : undefined}
-              className={`group flex items-center justify-between p-5 rounded-xl border transition-all duration-300 cursor-pointer ${
-                link.highlight 
-                ? 'bg-brand-charcoal border-brand-charcoal text-white shadow-xl hover:bg-black scale-[1.02]' 
-                : 'bg-white border-brand-stone hover:border-brand-gold hover:shadow-md'
-              }`}
-            >
-              <div className="flex items-center gap-4">
-                <div className={`p-2.5 rounded-lg ${link.highlight ? 'bg-white/10' : 'bg-brand-creme'}`}>
-                  {link.icon}
-                </div>
-                <div className="text-left">
-                  <div className="font-semibold text-sm tracking-tight">{link.title}</div>
-                  <div className={`text-[10px] uppercase tracking-luxury font-bold mt-0.5 ${link.highlight ? 'text-white/50' : 'text-gray-400'}`}>
-                    {link.subtitle}
-                  </div>
-                </div>
-              </div>
-              <ChevronRight className={`w-4 h-4 transition-transform group-hover:translate-x-1 ${link.highlight ? 'text-white/40' : 'text-gray-300'}`} />
-            </a>
-          ))}
-        </nav>
+        {/* Links Navigation */}
+<nav className="flex flex-col items-center w-full space-y-4 mb-14">
+  {DATA.links.map((link, idx) => (
+    <a
+      key={idx}
+      href={link.type === 'link' ? link.url : undefined}
+      target={link.type === 'link' ? "_blank" : undefined}
+      rel={link.type === 'link' ? "noopener noreferrer" : undefined}
+      onClick={link.type === 'modal' ? (e) => { e.preventDefault(); setShowContact(true); } : undefined}
+      className={`
+        group flex items-center justify-between 
+        w-full max-w-[320px] px-8 py-4 
+        rounded-full border transition-all duration-300 cursor-pointer
+        ${link.highlight 
+          ? 'bg-brand-charcoal border-brand-charcoal text-white shadow-lg hover:bg-black hover:scale-105' 
+          : 'bg-white border-brand-stone text-brand-ink hover:border-brand-gold hover:shadow-md hover:-translate-y-1'
+        }
+      `}
+    >
+      <div className="flex items-center gap-4">
+        <div className={`transition-colors ${link.highlight ? 'text-white/80 group-hover:text-white' : 'text-brand-gold'}`}>
+          {link.icon}
+        </div>
+        <div className="text-left">
+          <div className="font-semibold text-xs tracking-tight">{link.title}</div>
+          <div className={`text-[9px] uppercase tracking-luxury font-bold ${link.highlight ? 'text-white/50' : 'text-gray-400'}`}>
+            {link.subtitle}
+          </div>
+        </div>
+      </div>
+      <ChevronRight className={`w-4 h-4 transition-transform group-hover:translate-x-1 ${link.highlight ? 'text-white/40' : 'text-brand-stone'}`} />
+    </a>
+  ))}
+</nav>
 
         <section className="mb-14 px-1">
           <div className="flex items-center justify-between mb-5 px-1">
