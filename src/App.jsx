@@ -137,7 +137,7 @@ const App = () => {
   </div>
   <p className="text-gray-600 leading-relaxed max-w-[280px] mx-auto italic text-sm mb-6">"{DATA.profile.tagline}"</p>
   <div className="w-full p-4 border-y border-brand-stone mb-8">
-     <p className="text-[12px] text-gray-500 leading-relaxed uppercase tracking-luxury italic text-center">{DATA.profile.about}</p>
+     <p className="text-[13px] text-gray-600 leading-relaxed uppercase tracking-luxury italic text-center">{DATA.profile.about}</p>
   </div>
 </header>
 
@@ -206,7 +206,7 @@ const App = () => {
            <p className="text-[9px] font-bold uppercase tracking-luxury text-gray-400 mb-4">Trusted By</p>
            <div className="flex flex-wrap justify-center gap-x-6 gap-y-2 opacity-60 grayscale">
               {DATA.partners.map((partner, i) => (
-                <span key={i} className="text-[11px] font-serif italic text-brand-ink">{partner}</span>
+                <span key={i} className="text-[14px] font-serif italic text-brand-ink">{partner}</span>
               ))}
            </div>
         </section>
