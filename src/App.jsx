@@ -135,7 +135,7 @@ const App = () => {
     <MapPin className="w-3 h-3" />
     <span>{DATA.profile.location}</span>
   </div>
-  <p className="text-gray-600 leading-relaxed max-w-[280px] mx-auto italic text-sm mb-6">"{DATA.profile.tagline}"</p>
+  <p className="text-gray-600 leading-relaxed max-w-[280px] mx-auto not-italic text-sm mb-6">"{DATA.profile.tagline}"</p>
   <div className="w-full p-4 border-y border-brand-stone mb-8">
      <p className="text-[13px] text-gray-600 leading-relaxed uppercase tracking-luxury italic text-center">{DATA.profile.about}</p>
   </div>
