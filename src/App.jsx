@@ -54,8 +54,8 @@ const DATA = {
   ],
   gallery: [
     { url: "/Raffles.jpg", label: "Grand Hotels" },
-    { url: "https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?auto=format&fit=crop&q=80&w=400", label: "Heritage Lounge" },
-    { url: "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&q=80&w=400", label: "Estate Views" },
+    { url: "/ritz.jpg", label: "Heritage Lounge" },
+    { url: "/monaco.jpg", label: "Iconic Views" },
   ],
   partners: ["Accor", "Four Seasons", "Ritz-Carlton"]
 };
