@@ -57,7 +57,7 @@ const DATA = {
     { url: "https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?auto=format&fit=crop&q=80&w=400", label: "Heritage Lounge" },
     { url: "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&q=80&w=400", label: "Estate Views" },
   ],
-  partners: ["Aman", "Belmond", "Rosewood", "Ritz-Carlton"]
+  partners: ["Aman", "Four Seasons", "Ritz-Carlton"]
 };
 
 const App = () => {
@@ -137,7 +137,7 @@ const App = () => {
   </div>
   <p className="text-gray-600 leading-relaxed max-w-[280px] mx-auto italic text-sm mb-6">"{DATA.profile.tagline}"</p>
   <div className="w-full p-4 border-y border-brand-stone mb-8">
-     <p className="text-[11px] text-gray-400 leading-relaxed uppercase tracking-luxury italic text-center">{DATA.profile.about}</p>
+     <p className="text-[12px] text-gray-500 leading-relaxed uppercase tracking-luxury italic text-center">{DATA.profile.about}</p>
   </div>
 </header>
 
@@ -204,9 +204,9 @@ const App = () => {
         {/* Partners Section */}
         <section className="mb-14 px-1 text-center animate-in fade-in duration-1000 delay-700 fill-mode-both">
            <p className="text-[9px] font-bold uppercase tracking-luxury text-gray-400 mb-4">Trusted By</p>
-           <div className="flex flex-wrap justify-center gap-x-6 gap-y-2 opacity-50 grayscale">
+           <div className="flex flex-wrap justify-center gap-x-6 gap-y-2 opacity-60 grayscale">
               {DATA.partners.map((partner, i) => (
-                <span key={i} className="text-[10px] font-serif italic text-brand-ink">{partner}</span>
+                <span key={i} className="text-[11px] font-serif italic text-brand-ink">{partner}</span>
               ))}
            </div>
         </section>
