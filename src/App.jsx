@@ -54,8 +54,8 @@ const DATA = {
   ],
   gallery: [
     { url: "/Raffles.jpg", label: "Grand Hotels" },
-    { url: "/ritz.jpg", label: "Heritage Lounge" },
-    { url: "/monaco.jpg", label: "Iconic Views" },
+    { url: "/Ritz.jpg", label: "Heritage Lounge" },
+    { url: "/Monaco.jpg", label: "Iconic Views" },
   ],
   partners: ["Accor", "Four Seasons", "Ritz-Carlton"]
 };
