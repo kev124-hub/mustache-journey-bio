@@ -39,7 +39,7 @@ const DATA = {
     },
     { 
       title: "Digital Media Kit", 
-      subtitle: "Download 2024 Performance Data",
+      subtitle: "See What We Offer",
       icon: <FileText className="w-5 h-5" />, 
       url: "/mustache-journey-media-kit.pdf", 
       type: 'link'
@@ -53,11 +53,11 @@ const DATA = {
     },
   ],
   gallery: [
-    { url: "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&q=80&w=400", label: "Grand Suites" },
+    { url: "/Raffles.jpg", label: "Grand Hotels" },
     { url: "https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?auto=format&fit=crop&q=80&w=400", label: "Heritage Lounge" },
     { url: "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&q=80&w=400", label: "Estate Views" },
   ],
-  partners: ["Aman", "Four Seasons", "Ritz-Carlton"]
+  partners: ["Accor", "Four Seasons", "Ritz-Carlton"]
 };
 
 const App = () => {
