@@ -2,11 +2,13 @@ import React, { useState, useEffect } from 'react';
 import { 
   Instagram, Mail, MapPin, FileText, ChevronRight, 
   Globe, X, Send, CreditCard, CheckCircle2, 
-  BarChart3, Users, Globe2, PlayCircle, ShieldCheck, Zap, ArrowLeft
+  BarChart3, Users, Globe2, PlayCircle, ShieldCheck, Zap, ArrowLeft,
+  Eye, Focus, Camera, Award
 } from 'lucide-react';
 
 /**
  * CONFIGURATION BLOCK
+ * Content enriched from PDF Media Kit
  */
 const DATA = {
   profile: {
@@ -15,12 +17,35 @@ const DATA = {
     tagline: "Documenting the world's most iconic heritage hotels through a lens of modern character and timeless style.",
     location: "Global Explorer",
     avatar: "/avatar.jpg", 
-    about: "Specializing in visual storytelling for boutique estates and historic luxury properties. My mission is to bridge the gap between classic elegance and modern digital reach."
+    about: "A cinematic lifestyle brand documenting luxury travel through the lens of earned confidence and quiet authority. Specializing in refined storytelling that enhances guest perception."
   },
   stats: [
     { label: "Monthly Reach", value: "240K+", icon: <Zap className="w-4 h-4" /> },
     { label: "Avg. Engagement", value: "8.4%", icon: <BarChart3 className="w-4 h-4" /> },
     { label: "UHNW Audience", value: "62%", icon: <Users className="w-4 h-4" /> }
+  ],
+  audience: {
+    age: "30 — 55",
+    profile: "Executives, Entrepreneurs, & Senior Professionals",
+    geography: "USA, UK, Europe, & Global Luxury Hubs",
+    interests: "Five-star hotels, Design-led destinations, Premium travel"
+  },
+  formats: [
+    { 
+      name: "Silent Authority Walk", 
+      desc: "Controlled movement through corridors and transitional spaces. Access, not attention.",
+      icon: <Focus className="w-5 h-5" />
+    },
+    { 
+      name: "Access, Not Attention", 
+      desc: "POV details highlighting design, service flow, and atmosphere.",
+      icon: <Eye className="w-5 h-5" />
+    },
+    { 
+      name: "Earned Stillness", 
+      desc: "Calm moments capturing light, space, and the reward of arrival.",
+      icon: <Camera className="w-5 h-5" />
+    }
   ],
   links: [
     { 
@@ -58,7 +83,6 @@ const App = () => {
   const [showContact, setShowContact] = useState(false);
   const [formStatus, setFormStatus] = useState('idle');
 
-  // Scroll to top when switching views
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [view]);
@@ -74,7 +98,6 @@ const App = () => {
 
   const BioView = () => (
     <div className="animate-in fade-in duration-700">
-      {/* Profile Header */}
       <header className="flex flex-col items-center text-center mb-10">
         <div className="relative mb-8 group cursor-pointer">
           <div className="absolute -inset-6 bg-gradient-to-tr from-brand-gold/30 to-brand-charcoal/10 rounded-full blur-2xl opacity-40 animate-pulse group-hover:opacity-60 transition-opacity duration-700"></div>
@@ -100,7 +123,6 @@ const App = () => {
         </div>
       </header>
 
-      {/* Links Navigation */}
       <nav className="flex flex-col items-center w-full space-y-4 mb-14 px-2">
         {DATA.links.map((link, idx) => (
           <button
@@ -140,7 +162,6 @@ const App = () => {
         ))}
       </nav>
 
-      {/* Portfolio Gallery */}
       <section className="mb-14 px-1 animate-in fade-in duration-1000 delay-500 fill-mode-both">
         <div className="flex items-center justify-between mb-5 px-1">
           <h2 className="text-[10px] font-bold uppercase tracking-luxury text-brand-gold">The Portfolio</h2>
@@ -170,10 +191,19 @@ const App = () => {
 
       <header className="mb-12">
         <h2 className="text-4xl font-serif mb-3 italic">The Media Kit</h2>
-        <p className="text-[9px] font-bold uppercase tracking-ultra text-gray-400">@mustache.journey — Interactive Performance Data</p>
+        <p className="text-[9px] font-bold uppercase tracking-ultra text-gray-400">@mustache.journey — Narrative-led integration</p>
       </header>
 
-      {/* Dynamic Stats */}
+      {/* Brand Overview Section */}
+      <section className="mb-16 border-b border-brand-stone pb-12">
+        <div className="bg-white p-8 rounded-[2rem] border border-brand-stone">
+           <p className="text-sm leading-relaxed text-gray-600 italic">
+             "mustache.journey is a cinematic lifestyle brand documenting luxury travel through the lens of earned confidence and quiet authority. Content crafted for hospitality partners seeking brand-safe storytelling that enhances perception."
+           </p>
+        </div>
+      </section>
+
+      {/* Dynamic Performance Stats */}
       <div className="grid grid-cols-1 gap-4 mb-16">
         {DATA.stats.map((stat, i) => (
           <div key={i} className="bg-white border border-brand-stone p-6 rounded-3xl flex items-center justify-between shadow-sm">
@@ -186,36 +216,62 @@ const App = () => {
         ))}
       </div>
 
-      {/* Asset Utility Preview */}
+      {/* Signature Storytelling Formats */}
       <section className="mb-16">
-        <h3 className="text-[10px] font-bold uppercase tracking-luxury text-brand-gold mb-6">Cinematic Asset Utility</h3>
-        <div className="aspect-video bg-brand-charcoal rounded-3xl overflow-hidden relative group border border-brand-stone shadow-2xl">
-          <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent z-10"></div>
-          <video 
-            className="w-full h-full object-cover opacity-80"
-            autoPlay muted loop playsInline
-          >
-            <source src="/samples/heritage-walk.mp4" type="video/mp4" />
-          </video>
-          <div className="absolute inset-0 z-20 flex flex-col justify-end p-8">
-            <p className="text-white text-lg font-serif italic mb-1">High-Bitrate 4K</p>
-            <p className="text-white/60 text-[9px] uppercase tracking-widest">Designed for evergreen hotel marketing</p>
-          </div>
+        <h3 className="text-[10px] font-bold uppercase tracking-luxury text-brand-gold mb-6 text-center">Signature Formats</h3>
+        <div className="space-y-4">
+          {DATA.formats.map((format, i) => (
+            <div key={i} className="p-6 bg-brand-creme border border-brand-stone rounded-3xl flex gap-5 items-start">
+               <div className="mt-1 text-brand-gold">{format.icon}</div>
+               <div>
+                 <h4 className="font-serif text-lg text-brand-ink mb-1">{format.name}</h4>
+                 <p className="text-xs text-gray-500 leading-relaxed">{format.desc}</p>
+               </div>
+            </div>
+          ))}
         </div>
       </section>
 
-      {/* Strategic Posture */}
-      <section className="bg-brand-charcoal text-white p-10 rounded-[2.5rem] shadow-xl">
-        <ShieldCheck className="w-8 h-8 text-brand-gold mb-6" />
-        <h4 className="text-xl font-serif mb-4 italic">Authority Partner Policy</h4>
-        <p className="text-sm text-white/60 leading-relaxed mb-8">
-          We do not create "content." We engineer digital heritage assets that maintain visual authority across all brand platforms.
-        </p>
+      {/* Audience Insights */}
+      <section className="mb-16 bg-brand-charcoal text-white p-10 rounded-[3rem] shadow-2xl relative overflow-hidden">
+        <div className="absolute top-0 right-0 w-32 h-32 bg-brand-gold/10 blur-3xl rounded-full"></div>
+        <h3 className="text-[10px] font-bold uppercase tracking-luxury text-brand-gold mb-8">Audience Profile</h3>
+        <div className="grid grid-cols-1 gap-8">
+           <div>
+             <span className="block text-[11px] font-bold text-white/40 uppercase mb-2">Age Range</span>
+             <p className="text-2xl font-serif italic text-brand-gold">{DATA.audience.age}</p>
+           </div>
+           <div>
+             <span className="block text-[11px] font-bold text-white/40 uppercase mb-2">Primary Profile</span>
+             <p className="text-sm text-white/80">{DATA.audience.profile}</p>
+           </div>
+           <div>
+             <span className="block text-[11px] font-bold text-white/40 uppercase mb-2">Key Geography</span>
+             <p className="text-sm text-white/80">{DATA.audience.geography}</p>
+           </div>
+        </div>
+      </section>
+
+      {/* Brand Safety Policy */}
+      <section className="bg-white border border-brand-stone p-10 rounded-[2.5rem] mb-16 text-center">
+        <ShieldCheck className="w-8 h-8 text-brand-gold mx-auto mb-6" />
+        <h4 className="text-xl font-serif mb-4 italic">Creative & Brand Safety</h4>
+        <div className="space-y-3">
+          <p className="text-[10px] font-bold uppercase tracking-widest text-gray-400">No forced talking points</p>
+          <div className="h-[1px] w-8 bg-brand-stone mx-auto"></div>
+          <p className="text-[10px] font-bold uppercase tracking-widest text-gray-400">No trend-driven formats</p>
+          <div className="h-[1px] w-8 bg-brand-stone mx-auto"></div>
+          <p className="text-[10px] font-bold uppercase tracking-widest text-gray-400">Asset Utility Focused</p>
+        </div>
+      </section>
+
+      {/* Booking CTA */}
+      <section className="px-1">
         <button 
           onClick={() => setShowContact(true)}
-          className="w-full bg-white text-brand-charcoal py-4 rounded-full text-[10px] font-bold uppercase tracking-luxury hover:bg-brand-gold transition-colors"
+          className="w-full bg-brand-gold text-white py-5 rounded-full text-[10px] font-bold uppercase tracking-[0.4em] shadow-xl hover:bg-brand-charcoal transition-all flex items-center justify-center gap-3"
         >
-          Secure Booking Details
+          <Award className="w-3 h-3" /> Secure Partnership Details
         </button>
       </section>
     </div>
@@ -228,7 +284,6 @@ const App = () => {
       <div className={`relative w-full max-w-md bg-brand-paper min-h-screen px-6 pt-16 pb-24 shadow-sm transition-all duration-700 ${showContact ? 'blur-lg scale-95 opacity-40' : 'opacity-100'}`}>
         {view === 'home' ? <BioView /> : <MediaKitView />}
 
-        {/* Global Footer */}
         <footer className="flex flex-col items-center gap-10 mt-auto pt-10">
           <div className="flex items-center gap-12">
             <Instagram className="w-6 h-6 text-gray-300 hover:text-brand-gold cursor-pointer" />
@@ -239,7 +294,6 @@ const App = () => {
         </footer>
       </div>
 
-      {/* Partnership Inquiry Modal */}
       {showContact && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-brand-charcoal/20 backdrop-blur-md animate-in fade-in duration-500" onClick={() => setShowContact(false)}>
           <div className="bg-white/70 backdrop-blur-2xl w-full max-w-sm rounded-[2.5rem] shadow-2xl overflow-hidden relative border border-white/40 animate-in zoom-in-95 duration-300" onClick={(e) => e.stopPropagation()}>
