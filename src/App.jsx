@@ -117,9 +117,9 @@ const App = () => {
           <MapPin className="w-3 h-3" />
           <span>{DATA.profile.location}</span>
         </div>
-        <p className="text-gray-600 leading-relaxed max-w-[280px] mx-auto italic text-sm mb-6">"{DATA.profile.tagline}"</p>
+        <p className="text-gray-600 leading-relaxed max-w-[280px] mx-auto not-italic text-sm mb-6">"{DATA.profile.tagline}"</p>
         <div className="w-full p-4 border-y border-brand-stone mb-8">
-           <p className="text-[11px] text-gray-400 leading-relaxed uppercase tracking-luxury italic text-center">{DATA.profile.about}</p>
+           <p className="text-[11px] text-gray-600 leading-relaxed uppercase tracking-luxury italic text-center">{DATA.profile.about}</p>
         </div>
       </header>
 
@@ -174,6 +174,15 @@ const App = () => {
                 <img src={img.url} className="w-full h-full object-cover grayscale-[15%] group-hover:grayscale-0 transition-all duration-1000 group-hover:scale-110" />
               </div>
             </div>
+          ))}
+        </div>
+      </section>
+      {/* Partners Section */}
+      <section className="mb-14 px-1 text-center animate-in fade-in duration-1000 delay-700 fill-mode-both">
+        <p className="text-[9px] font-bold uppercase tracking-luxury text-gray-400 mb-4">Trusted By</p>
+        <div className="flex flex-wrap justify-center gap-x-6 gap-y-2 opacity-50 grayscale">
+          {DATA.partners.map((partner, i) => (
+            <span key={i} className="text-[10px] font-serif italic text-brand-ink">{partner}</span>
           ))}
         </div>
       </section>
