@@ -71,11 +71,11 @@ const DATA = {
     },
   ],
   gallery: [
-    { url: "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&q=80&w=400", label: "Grand Suites" },
-    { url: "https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?auto=format&fit=crop&q=80&w=400", label: "Heritage Lounge" },
-    { url: "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&q=80&w=400", label: "Estate Views" },
+    { url: "/Raffles.jpg", label: "Grand Hotels" },
+    { url: "/Ritz.jpg", label: "Worldwide Cities" },
+    { url: "/Monaco.jpg", label: "Iconic Views" },
   ],
-  partners: ["Aman", "Belmond", "Rosewood", "Ritz-Carlton"]
+  partners: ["Accor", "Four Seasons", "Ritz-Carlton"]
 };
 
 const App = () => {
