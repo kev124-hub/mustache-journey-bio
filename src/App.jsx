@@ -179,10 +179,10 @@ const App = () => {
       </section>
       {/* Partners Section */}
       <section className="mb-14 px-1 text-center animate-in fade-in duration-1000 delay-700 fill-mode-both">
-        <p className="text-[13px] font-bold uppercase tracking-luxury text-gray-500 mb-4">Trusted By</p>
+        <p className="text-[12px] font-bold uppercase tracking-luxury text-gray-500 mb-4">Trusted By</p>
         <div className="flex flex-wrap justify-center gap-x-6 gap-y-2 opacity-50 grayscale">
           {DATA.partners.map((partner, i) => (
-            <span key={i} className="text-[14px] font-serif italic text-brand-ink">{partner}</span>
+            <span key={i} className="text-[15px] font-serif italic text-brand-ink">{partner}</span>
           ))}
         </div>
       </section>
