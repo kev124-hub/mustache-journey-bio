@@ -19,6 +19,11 @@ const DATA = {
     avatar: "/avatar.jpg", 
     about: "A cinematic lifestyle brand documenting luxury travel through the lens of earned confidence and quiet authority. Specializing in refined storytelling that enhances guest perception."
   },
+  socials: {
+    instagram: "https://instagram.com/mustache.journey",
+    email: "collabs@mustachejourney.com",
+    website: "https://mustachejourney.com"
+  },
   stats: [
     { label: "Monthly Reach", value: "240K+", icon: <Zap className="w-4 h-4" /> },
     { label: "Avg. Engagement", value: "8.4%", icon: <BarChart3 className="w-4 h-4" /> },
@@ -305,9 +310,15 @@ const App = () => {
 
         <footer className="flex flex-col items-center gap-10 mt-auto pt-10">
           <div className="flex items-center gap-12">
-            <Instagram className="w-6 h-6 text-gray-300 hover:text-brand-gold cursor-pointer" />
-            <Mail className="w-6 h-6 text-gray-300 hover:text-brand-gold cursor-pointer" />
-            <Globe className="w-6 h-6 text-gray-300 hover:text-brand-gold cursor-pointer" />
+            <a href={DATA.socials.instagram} target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-brand-gold transition-colors">
+              <Instagram className="w-6 h-6" />
+            </a>
+            <a href={`mailto:${DATA.socials.email}`} className="text-gray-300 hover:text-brand-gold transition-colors">
+              <Mail className="w-6 h-6" />
+            </a>
+            <a href={DATA.socials.website} target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-brand-gold transition-colors">
+              <Globe className="w-6 h-6" />
+            </a>
           </div>
           <span className="text-[9px] font-bold uppercase tracking-ultra text-gray-400">Mustache Journey © 2026</span>
         </footer>
