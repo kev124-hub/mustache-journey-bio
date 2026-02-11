@@ -14,7 +14,7 @@ const DATA = {
   profile: {
     name: "Mustache Journey",
     handle: "@mustache.journey",
-    tagline: "Documenting the world's most iconic heritage hotels through a lens of modern character and timeless style.",
+    tagline: "Documenting the world's most iconic Luxury hotels through a lens of modern character and timeless style.",
     location: "Global Explorer",
     avatar: "/avatar.jpg", 
     about: "A cinematic lifestyle brand documenting luxury travel through the lens of earned confidence and quiet authority. Specializing in refined storytelling that enhances guest perception."
