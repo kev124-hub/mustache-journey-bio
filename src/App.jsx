@@ -12,13 +12,13 @@ import {
  */
 const DATA = {
   profile: {
-    name: "Mustache Journey",
-    handle: "@mustache.journey",
-    tagline: "Documenting the world's most iconic Luxury hotels through a lens of modern character and timeless style.",
-    location: "Global Explorer",
-    avatar: "/avatar.jpg", 
-    about: "A cinematic lifestyle brand documenting luxury travel through the lens of earned confidence and quiet authority. Specializing in refined storytelling that enhances guest perception."
-  },
+  name: "Mustache Journey",
+  handle: "@mustache.journey",
+  tagline: "Retired FDNY Lieutenant. Registered Nurse. Now documenting life across 25+ countries — F1 races, exotic cars, five-star properties, and men's grooming worth talking about.",
+  location: "Worldwide",
+  avatar: "/avatar.jpg",
+  about: "A cinematic lifestyle brand creating UGC for luxury travel, automotive, men's grooming, and fine dining brands. Real person. Real lifestyle. Content rooted in a life actually lived."
+},
   socials: {
     instagram: "https://instagram.com/mustache.journey",
     email: "collabs@mustachejourney.com",
@@ -53,34 +53,34 @@ const DATA = {
     }
   ],
   links: [
-    { 
-      title: "Partnership Inquiries", 
-      subtitle: "Inquire for 2026/27 collaborations",
-      icon: <Mail className="w-5 h-5" />, 
-      type: 'modal',
-      highlight: true 
-    },
-    { 
-      title: "Digital Media Kit", 
-      subtitle: "Interactive Performance Portal",
-      icon: <FileText className="w-5 h-5" />, 
-      type: 'page',
-      pageId: 'mediakit'
-    },
-    { 
-      title: "Luxury Consultation", 
-      subtitle: "1-on-1 Content Strategy Call",
-      icon: <CreditCard className="w-5 h-5" />, 
-      url: "https://stripe.com/your-payment-link",
-      type: 'link'
-    },
-  ],
+  { 
+    title: "Partnership Inquiries", 
+    subtitle: "Inquire for 2026/27 collaborations",
+    icon: <Mail className="w-5 h-5" />, 
+    type: 'modal',
+    highlight: true 
+  },
+  { 
+    title: "Digital Media Kit", 
+    subtitle: "View Portfolio & Content Packages",
+    icon: <FileText className="w-5 h-5" />, 
+    url: "/mustache-journey-media-kit.pdf", 
+    type: 'link'
+  },
+  { 
+    title: "UGC Packages & Rates", 
+    subtitle: "View Deliverables & Pricing",
+    icon: <CreditCard className="w-5 h-5" />, 
+    url: "https://collabstr.com/mustache.journey",
+    type: 'link'
+  },
+],
   gallery: [
-    { url: "/Raffles.jpg", label: "Grand Hotels" },
-    { url: "/Ritz.jpg", label: "Worldwide Cities" },
-    { url: "/Monaco.jpg", label: "Iconic Views" },
-  ],
-  partners: ["Accor", "Four Seasons", "Ritz-Carlton"]
+  { url: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&q=80&w=400", label: "Exotic Cars" },
+  { url: "https://images.unsplash.com/photo-1541773367336-d3f104048bfb?auto=format&fit=crop&q=80&w=400", label: "F1 Motorsport" },
+  { url: "https://images.unsplash.com/photo-1621607512214-68297480165e?auto=format&fit=crop&q=80&w=400", label: "Luxury Travel" },
+],
+  partners: ["Four Seasons", "Ritz-Carlton", "Collabstr", "Insense"]
 };
 
 const App = () => {
