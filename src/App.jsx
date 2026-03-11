@@ -76,7 +76,7 @@ const DATA = {
   },
 ],
   gallery: [
-  { url: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&q=80&w=400", label: "Exotic Cars" },
+  { url: "cars.jpg?auto=format&fit=crop&q=80&w=400", label: "Exotic Cars" },
   { url: "https://images.unsplash.com/photo-1541773367336-d3f104048bfb?auto=format&fit=crop&q=80&w=400", label: "F1 Motorsport" },
   { url: "https://images.unsplash.com/photo-1621607512214-68297480165e?auto=format&fit=crop&q=80&w=400", label: "Luxury Travel" },
 ],
