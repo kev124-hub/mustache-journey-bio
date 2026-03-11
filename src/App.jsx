@@ -14,7 +14,7 @@ const DATA = {
   profile: {
   name: "Mustache Journey",
   handle: "@mustache.journey",
-  tagline: "Retired FDNY Lieutenant. Registered Nurse. Now documenting life across 25+ countries — F1 races, exotic cars, five-star properties, and men's grooming worth talking about.",
+  tagline: "Retired FDNY Lieutenant and RN. These days I move through the world differently — F1 paddocks, exotic cars, five-star properties across 25+ countries. I don't manufacture this lifestyle for content. I live it.",
   location: "Worldwide",
   avatar: "/avatar.jpg",
   about: "A cinematic lifestyle brand creating UGC for luxury travel, automotive, men's grooming, and fine dining brands. Real person. Real lifestyle. Content rooted in a life actually lived."
