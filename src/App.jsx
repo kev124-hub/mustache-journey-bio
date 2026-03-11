@@ -78,7 +78,7 @@ const DATA = {
   gallery: [
   { url: "cars.jpg?auto=format&fit=crop&q=80&w=400", label: "Exotic Cars" },
   { url: "monaco f1.jpg?auto=format&fit=crop&q=80&w=400", label: "F1 Motorsport" },
-  { url: "raffles.jpg?auto=format&fit=crop&q=80&w=400", label: "Luxury Travel" },
+  { url: "Raffles.jpg?auto=format&fit=crop&q=80&w=400", label: "Luxury Travel" },
 ],
   partners: ["Four Seasons", "Ritz-Carlton", "Collabstr", "Insense"]
 };
