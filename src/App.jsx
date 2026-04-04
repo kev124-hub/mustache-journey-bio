@@ -314,13 +314,9 @@ const App = () => {
             <a href={DATA.socials.instagram} target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-brand-gold transition-colors">
               <Instagram className="w-6 h-6" />
             </a>
-             <a href={DATA.socials.linkedin} target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-brand-gold transition-colors">
+            <a href={DATA.socials.linkedin} target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-brand-gold transition-colors">
               <Linkedin className="w-6 h-6" />
             </a>
-            <a href={`mailto:${DATA.socials.email}`} className="text-gray-300 hover:text-brand-gold transition-colors">
-              <Mail className="w-6 h-6" />
-            </a>
-            <a href={DATA.socials.website} target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-brand-gold transition-colors">
               <Globe className="w-6 h-6" />
             </a>
           </div>
