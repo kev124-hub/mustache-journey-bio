@@ -22,7 +22,8 @@ const DATA = {
   socials: {
     instagram: "https://instagram.com/mustache.journey",
     email: "collabs@mustachejourney.com",
-    website: "https://mustachejourney.com"
+    website: "https://mustachejourney.com",
+    linkedin: "https://www.linkedin.com/in/mustachejourney"
   },
   stats: [
     { label: "Monthly Reach", value: "240K+", icon: <Zap className="w-4 h-4" /> },
@@ -312,6 +313,9 @@ const App = () => {
           <div className="flex items-center gap-12">
             <a href={DATA.socials.instagram} target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-brand-gold transition-colors">
               <Instagram className="w-6 h-6" />
+            </a>
+             <a href={DATA.socials.linkedin} target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-brand-gold transition-colors">
+              <Linkedin className="w-6 h-6" />
             </a>
             <a href={`mailto:${DATA.socials.email}`} className="text-gray-300 hover:text-brand-gold transition-colors">
               <Mail className="w-6 h-6" />
