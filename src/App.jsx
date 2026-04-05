@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import { 
-  Instagram, Mail, MapPin, FileText, ChevronRight, 
-  Globe, X, Send, CreditCard, CheckCircle2, 
+import {
+  Instagram, Mail, MapPin, FileText, ChevronRight,
+  Globe, X, Send, CreditCard, CheckCircle2,
   BarChart3, Users, Globe2, PlayCircle, ShieldCheck, Zap, ArrowLeft,
-  Eye, Focus, Camera, Award, Download
+  Eye, Focus, Camera, Award, Download, Linkedin
 } from 'lucide-react';
 
 /**
@@ -12,13 +12,13 @@ import {
  */
 const DATA = {
   profile: {
-  name: "Mustache Journey",
-  handle: "@mustache.journey",
-  tagline: "Retired FDNY Lieutenant and RN. These days I move through the world differently — F1 paddocks, exotic cars, five-star properties across 40+ countries. I don't manufacture this lifestyle for content. I live it.",
-  location: "Worldwide",
-  avatar: "/avatar.jpg",
-  about: "A cinematic lifestyle brand creating UGC for luxury travel, automotive, men's grooming, and fine dining brands. Real person. Real lifestyle. Content rooted in a life actually lived."
-},
+    name: "Mustache Journey",
+    handle: "@mustache.journey",
+    tagline: "Retired FDNY Lieutenant and RN. These days I move through the world differently — F1 paddocks, exotic cars, five-star properties across 40+ countries. I don't manufacture this lifestyle for content. I live it.",
+    location: "Worldwide",
+    avatar: "/avatar.jpg",
+    about: "A cinematic lifestyle brand creating UGC for luxury travel, automotive, men's grooming, and fine dining brands. Real person. Real lifestyle. Content rooted in a life actually lived."
+  },
   socials: {
     instagram: "https://instagram.com/mustache.journey",
     email: "collabs@mustachejourney.com",
@@ -37,50 +37,50 @@ const DATA = {
     interests: "Five-star hotels, Design-led destinations, Premium travel"
   },
   formats: [
-    { 
-      name: "Silent Authority Walk", 
+    {
+      name: "Silent Authority Walk",
       desc: "Controlled movement through corridors and transitional spaces. Access, not attention.",
       icon: <Focus className="w-5 h-5" />
     },
-    { 
-      name: "Access, Not Attention", 
+    {
+      name: "Access, Not Attention",
       desc: "POV details highlighting design, service flow, and atmosphere.",
       icon: <Eye className="w-5 h-5" />
     },
-    { 
-      name: "Earned Stillness", 
+    {
+      name: "Earned Stillness",
       desc: "Calm moments capturing light, space, and the reward of arrival.",
       icon: <Camera className="w-5 h-5" />
     }
   ],
   links: [
-  { 
-    title: "Partnership Inquiries", 
-    subtitle: "Inquire for 2026/27 collaborations",
-    icon: <Mail className="w-5 h-5" />, 
-    type: 'modal',
-    highlight: true 
-  },
-  { 
-    title: "Digital Media Kit", 
-    subtitle: "View Portfolio & Content Packages",
-    icon: <FileText className="w-5 h-5" />, 
-    url: "/mustache-journey-media-kit.pdf", 
-    type: 'link'
-  },
-  { 
-    title: "UGC Packages & Rates", 
-    subtitle: "View Deliverables & Pricing",
-    icon: <CreditCard className="w-5 h-5" />, 
-    url: "https://collabstr.com/mustache.journey",
-    type: 'link'
-  },
-],
+    {
+      title: "Partnership Inquiries",
+      subtitle: "Inquire for 2026/27 collaborations",
+      icon: <Mail className="w-5 h-5" />,
+      type: 'modal',
+      highlight: true
+    },
+    {
+      title: "Digital Media Kit",
+      subtitle: "View Portfolio & Content Packages",
+      icon: <FileText className="w-5 h-5" />,
+      url: "/mustache-journey-media-kit.pdf",
+      type: 'link'
+    },
+    {
+      title: "UGC Packages & Rates",
+      subtitle: "View Deliverables & Pricing",
+      icon: <CreditCard className="w-5 h-5" />,
+      url: "https://collabstr.com/mustache.journey",
+      type: 'link'
+    },
+  ],
   gallery: [
-  { url: "cars.jpg?auto=format&fit=crop&q=80&w=400", label: "Exotic Cars" },
-  { url: "monaco f1.jpg?auto=format&fit=crop&q=80&w=400", label: "F1 Motorsport" },
-  { url: "Raffles.jpg?auto=format&fit=crop&q=80&w=400", label: "Luxury Travel" },
-],
+    { url: "cars.jpg?auto=format&fit=crop&q=80&w=400", label: "Exotic Cars" },
+    { url: "monaco f1.jpg?auto=format&fit=crop&q=80&w=400", label: "F1 Motorsport" },
+    { url: "Raffles.jpg?auto=format&fit=crop&q=80&w=400", label: "Luxury Travel" },
+  ],
   partners: ["Four Seasons", "Ritz-Carlton", "Collabstr", "Insense"]
 };
 
@@ -109,10 +109,10 @@ const App = () => {
           <div className="absolute -inset-6 bg-gradient-to-tr from-brand-gold/30 to-brand-charcoal/10 rounded-full blur-2xl opacity-40 animate-pulse group-hover:opacity-60 transition-opacity duration-700"></div>
           <div className="relative w-40 h-40 rounded-full bg-white shadow-2xl flex items-center justify-center p-1.5 transition-transform duration-500 group-hover:scale-[1.02]">
             <div className="w-full h-full rounded-full overflow-hidden border border-brand-stone/30 bg-brand-creme">
-              <img 
-                src={DATA.profile.avatar} 
-                alt="Profile" 
-                className="w-full h-full object-cover object-top scale-95 origin-bottom transition-transform duration-1000 group-hover:scale-105" 
+              <img
+                src={DATA.profile.avatar}
+                alt="Profile"
+                className="w-full h-full object-cover object-top scale-95 origin-bottom transition-transform duration-1000 group-hover:scale-105"
                 onError={(e) => e.target.src = "https://images.unsplash.com/photo-1618077360395-f3068be8e001?auto=format&fit=crop&q=80&w=400"}
               />
             </div>
@@ -140,12 +140,12 @@ const App = () => {
             }}
             style={{ animationDelay: `${(idx + 1) * 150}ms` }}
             className={`
-              group flex items-center justify-between 
+              group flex items-center justify-between
               w-full max-w-[340px] p-5
               rounded-full border transition-all duration-500 cursor-pointer
               animate-in fade-in slide-in-from-bottom-8 fill-mode-both
-              ${link.highlight 
-                ? 'bg-brand-charcoal border-brand-charcoal text-white shadow-xl hover:bg-black hover:scale-[1.03]' 
+              ${link.highlight
+                ? 'bg-brand-charcoal border-brand-charcoal text-white shadow-xl hover:bg-black hover:scale-[1.03]'
                 : 'bg-white border-brand-stone text-brand-ink hover:border-brand-gold hover:shadow-md hover:-translate-y-0.5'
               }
             `}
@@ -173,6 +173,14 @@ const App = () => {
           <h2 className="text-[10px] font-bold uppercase tracking-luxury text-brand-gold">The Portfolio</h2>
           <div className="h-[1px] flex-grow ml-4 bg-brand-stone"></div>
         </div>
+        <div className="mb-4 rounded-md overflow-hidden border border-brand-stone shadow-sm bg-black aspect-[16/9]">
+          <video
+            src="/Collab Intro.mp4"
+            controls
+            playsInline
+            className="w-full h-full object-cover"
+          />
+        </div>
         <div className="grid grid-cols-3 gap-3">
           {DATA.gallery.map((img, i) => (
             <div key={i} className="group relative aspect-[3/4] p-1.5 border border-brand-stone rounded-md overflow-hidden bg-white shadow-sm transition-all hover:border-brand-gold cursor-zoom-in">
@@ -198,16 +206,16 @@ const App = () => {
   const MediaKitView = () => (
     <div className="animate-in fade-in slide-in-from-bottom-8 duration-1000 py-4 pb-20">
       <div className="flex justify-between items-center mb-12">
-        <button 
+        <button
           onClick={() => setView('home')}
           className="flex items-center gap-2 text-[10px] font-bold uppercase tracking-luxury text-brand-gold hover:translate-x-[-4px] transition-transform"
         >
           <ArrowLeft className="w-3 h-3" /> Back to Profile
         </button>
-        
-        <a 
-          href="/mustache-journey-media-kit.pdf" 
-          download 
+
+        <a
+          href="/mustache-journey-media-kit.pdf"
+          download
           className="flex items-center gap-2 text-[9px] font-bold uppercase tracking-widest text-gray-400 hover:text-brand-gold transition-colors"
         >
           <Download className="w-3 h-3" /> PDF Version
@@ -292,7 +300,7 @@ const App = () => {
 
       {/* Booking CTA */}
       <section className="px-1">
-        <button 
+        <button
           onClick={() => setShowContact(true)}
           className="w-full bg-brand-gold text-white py-5 rounded-full text-[10px] font-bold uppercase tracking-[0.4em] shadow-xl hover:bg-brand-charcoal transition-all flex items-center justify-center gap-3"
         >
@@ -317,6 +325,10 @@ const App = () => {
             <a href={DATA.socials.linkedin} target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-brand-gold transition-colors">
               <Linkedin className="w-6 h-6" />
             </a>
+            <a href={`mailto:${DATA.socials.email}`} className="text-gray-300 hover:text-brand-gold transition-colors">
+              <Mail className="w-6 h-6" />
+            </a>
+            <a href={DATA.socials.website} target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-brand-gold transition-colors">
               <Globe className="w-6 h-6" />
             </a>
           </div>
