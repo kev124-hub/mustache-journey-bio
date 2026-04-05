@@ -175,7 +175,7 @@ const App = () => {
         </div>
         <div className="mb-4 rounded-md overflow-hidden border border-brand-stone shadow-sm bg-black aspect-[16/9]">
           <video
-            src="/Collab Intro.mp4"
+            src="/Collab%20Intro.mp4"
             controls
             playsInline
             className="w-full h-full object-cover"
