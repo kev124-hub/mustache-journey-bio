@@ -173,7 +173,7 @@ const App = () => {
           <h2 className="text-[10px] font-bold uppercase tracking-luxury text-brand-gold">The Portfolio</h2>
           <div className="h-[1px] flex-grow ml-4 bg-brand-stone"></div>
         </div>
-        <div className="mb-4 rounded-md overflow-hidden border border-brand-stone shadow-sm bg-black aspect-[16/9]">
+        <div className="mb-4 rounded-md overflow-hidden border border-brand-stone shadow-sm bg-black aspect-[9/16]">
           <video
             src="https://www.dropbox.com/scl/fi/ms2t1bilalhyadzyftgoe/Collab-Intro.mp4?rlkey=zjf2oujfnp6fdcckknah46c3x&raw=1"
             controls
