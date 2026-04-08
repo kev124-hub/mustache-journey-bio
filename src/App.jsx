@@ -88,6 +88,7 @@ const App = () => {
   const [view, setView] = useState('home'); // 'home' or 'mediakit'
   const [showContact, setShowContact] = useState(false);
   const [formStatus, setFormStatus] = useState('idle');
+  const [activeMedia, setActiveMedia] = useState(null);
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -183,7 +184,11 @@ const App = () => {
         </div>
         <div className="grid grid-cols-3 gap-3">
           {DATA.gallery.map((media, i) => (
-            <div key={i} className="group relative aspect-[3/4] p-1.5 border border-stone-200 rounded-md overflow-hidden bg-white shadow-sm transition-all hover:border-amber-700 cursor-zoom-in">
+            <div 
+              key={i} 
+              className="group relative aspect-[3/4] p-1.5 border border-stone-200 rounded-md overflow-hidden bg-white shadow-sm transition-all hover:border-amber-700 cursor-zoom-in"
+              onClick={() => setActiveMedia(media.url)}
+            >
               <div className="w-full h-full overflow-hidden rounded-sm bg-stone-50">
                 <video 
                   src={media.url} 
@@ -191,7 +196,7 @@ const App = () => {
                   loop 
                   muted 
                   playsInline
-                  className="w-full h-full object-cover grayscale-[15%] group-hover:grayscale-0 transition-all duration-1000 group-hover:scale-110" 
+                  className="w-full h-full object-cover grayscale-[15%] group-hover:grayscale-0 transition-transform duration-700 transform group-hover:scale-110" 
                 />
               </div>
             </div>
@@ -367,6 +372,33 @@ const App = () => {
                 </form>
               )}
             </div>
+          </div>
+        </div>
+      )}
+
+      {/* Fullscreen Video Modal */}
+      {activeMedia && (
+        <div 
+          className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-stone-900/95 backdrop-blur-sm animate-in fade-in duration-300" 
+          onClick={() => setActiveMedia(null)}
+        >
+          <button 
+            onClick={() => setActiveMedia(null)} 
+            className="absolute top-6 right-6 p-2 text-white/50 hover:text-white bg-white/10 hover:bg-white/20 rounded-full transition-all z-[110]"
+          >
+            <X className="w-8 h-8" />
+          </button>
+          <div 
+            className="relative w-full max-w-lg max-h-[85vh] rounded-2xl overflow-hidden shadow-2xl animate-in zoom-in-95 duration-300 bg-black" 
+            onClick={(e) => e.stopPropagation()}
+          >
+            <video 
+              src={activeMedia} 
+              controls 
+              autoPlay 
+              playsInline
+              className="w-full h-full max-h-[85vh] object-contain"
+            />
           </div>
         </div>
       )}
