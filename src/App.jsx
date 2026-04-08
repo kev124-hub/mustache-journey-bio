@@ -3,7 +3,7 @@ import {
   Instagram, Mail, MapPin, FileText, ChevronRight,
   Globe, X, Send, CreditCard, CheckCircle2,
   BarChart3, Users, Globe2, PlayCircle, ShieldCheck, Zap, ArrowLeft,
-  Eye, Focus, Camera, Award, Download, Linkedin
+  Eye, Focus, Camera, Award, Download, Linkedin, Calendar
 } from 'lucide-react';
 
 /**
@@ -69,12 +69,29 @@ const DATA = {
       type: 'link'
     },
     {
-      title: "UGC Packages & Rates",
-      subtitle: "View Deliverables & Pricing",
-      icon: <CreditCard className="w-5 h-5" />,
-      url: "https://collabstr.com/mustachejourney",
-      type: 'link'
+      title: "2026 Travel Roster",
+      subtitle: "View upcoming F1 races & destinations",
+      icon: <Globe2 className="w-5 h-5" />,
+      type: 'page',
+      pageId: 'schedule'
     },
+  ],
+  schedule: [
+    { month: "April 2026", location: "Los Ángeles, CA", event: "Regent Santa Monica Beach", type: "Luxury Hospitality", status: "Open for Inquiry" },
+    { month: "May 2026", location: "Alexandria, VA", event: "Festival of Speed and Style", type: "Automotive", status: "Limited Availability" },
+    { month: "May 2026", location: "Casablanca, Morocco", event: "Royal Mansour Casablanca", type: "Luxury Hospitality", status: "Open for Inquiry" },
+    { month: "June 2026", location: "Rome, Italy", event: "Lifestyle Suites Rome", type: "Luxury Hospitality", status: "Open for Inquiry" },
+    { month: "June 2026", location: "Monaco", event: "Monaco Grand Prix", type: "F1 Motorsport", status: "Limited Availability" },
+    { month: "July 2026", location: "Athens & Mykonos, Greece", event: "Summer Edit", type: "Luxury Travel", status: "Open for Inquiry" },
+    { month: "July 2026", location: "London, UK", event: "UK Tour", type: "Luxury Travel", status: "Open for Inquiry" },
+    { month: "August 2026", location: "Amsterdam", event: "Zandvoort Grand Prix & Grand Sofitel", type: "F1 / Hospitality", status: "Open for Inquiry" },
+    { month: "September 2026", location: "Munich, Germany", event: "Oktoberfest @ Sofitel Bayerpost", type: "Lifestyle / Event", status: "Open for Inquiry" },
+    { month: "October 2026", location: "Singapore", event: "Singapore Grand Prix & Ritz Carlton", type: "F1 / Hospitality", status: "Open for Inquiry" },
+    { month: "October 2026", location: "Hualalai, Hawaii", event: "Four Seasons", type: "Luxury Hospitality", status: "Open for Inquiry" },
+    { month: "November 2026", location: "São Paulo, Brazil", event: "F1 Brazilian GP @ Tivoli Mofarraj", type: "F1 Motorsport", status: "Limited Availability" },
+    { month: "November 2026", location: "Iguassu & Rio, Brazil", event: "Belmond Cataratas & Copacabana Palace", type: "Luxury Travel", status: "Open for Inquiry" },
+    { month: "December 2026", location: "Dubai, UAE", event: "Winter Edit", type: "Luxury Travel", status: "Open for Inquiry" },
+    { month: "December 2026", location: "Monaco", event: "Hotel de Paris", type: "Luxury Hospitality", status: "Open for Inquiry" }
   ],
   gallery: [
     { url: "https://www.dropbox.com/scl/fi/xmv928whoehz22ep0znoy/Collabstr-Spec-Car-Video-1.mp4?rlkey=fg80vwvdb2yzgq9u74flvohfb&st=8cojhvyi&raw=1", label: "Exotic Cars" },
@@ -322,12 +339,67 @@ const App = () => {
     </div>
   );
 
+  const ScheduleView = () => (
+    <div className="animate-in fade-in slide-in-from-bottom-8 duration-1000 py-4 pb-20">
+      <div className="flex justify-between items-center mb-12">
+        <button
+          onClick={() => setView('home')}
+          className="flex items-center gap-2 text-[10px] font-bold uppercase tracking-[0.2em] text-amber-700 hover:translate-x-[-4px] transition-transform"
+        >
+          <ArrowLeft className="w-3 h-3" /> Back to Profile
+        </button>
+      </div>
+
+      <header className="mb-12">
+        <h2 className="text-4xl font-serif mb-3 italic">2026 Itinerary</h2>
+        <p className="text-[9px] font-bold uppercase tracking-[0.3em] text-gray-400">Upcoming Destinations & Availability</p>
+      </header>
+
+      <div className="space-y-4 mb-16">
+        {DATA.schedule.map((item, i) => (
+          <div key={i} className="bg-white border border-stone-200 p-6 rounded-3xl shadow-sm hover:border-amber-700 transition-colors group relative overflow-hidden">
+            <div className="flex justify-between items-start mb-4">
+              <div>
+                <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-amber-700 mb-1 block">{item.month}</span>
+                <h3 className="text-xl font-serif text-stone-900 group-hover:text-amber-700 transition-colors">{item.location}</h3>
+              </div>
+              <span className={`text-[9px] font-bold uppercase tracking-widest px-3 py-1 rounded-full ${
+                item.status === 'Booking Closed' ? 'bg-stone-100 text-stone-400' :
+                item.status === 'Limited Availability' ? 'bg-amber-100 text-amber-700' :
+                'bg-emerald-50 text-emerald-600'
+              }`}>
+                {item.status}
+              </span>
+            </div>
+            
+            <div className="flex flex-col gap-1">
+              <p className="text-sm text-gray-600 font-medium">{item.event}</p>
+              <p className="text-xs text-gray-400">{item.type}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      {/* Booking CTA */}
+      <section className="px-1">
+        <button
+          onClick={() => setShowContact(true)}
+          className="w-full bg-stone-900 text-white py-5 rounded-full text-[10px] font-bold uppercase tracking-[0.4em] shadow-xl hover:bg-black transition-all flex items-center justify-center gap-3"
+        >
+          <Mail className="w-3 h-3" /> Inquire For Dates
+        </button>
+      </section>
+    </div>
+  );
+
   return (
     <div className="min-h-screen bg-stone-50 flex justify-center selection:bg-stone-200 overflow-x-hidden font-sans">
       <div className="fixed inset-0 opacity-[0.03] pointer-events-none bg-[url('https://www.transparenttextures.com/patterns/linen.png')]"></div>
 
       <div className={`relative w-full max-w-md bg-white min-h-screen px-6 pt-16 pb-24 shadow-sm transition-all duration-700 ${showContact ? 'blur-lg scale-95 opacity-40' : 'opacity-100'}`}>
-        {view === 'home' ? <BioView /> : <MediaKitView />}
+        {view === 'home' && <BioView />}
+        {view === 'mediakit' && <MediaKitView />}
+        {view === 'schedule' && <ScheduleView />}
 
         <footer className="flex flex-col items-center gap-10 mt-auto pt-10">
           <div className="flex items-center gap-12">
