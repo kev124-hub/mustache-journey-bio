@@ -65,21 +65,21 @@ const DATA = {
       title: "Digital Media Kit",
       subtitle: "View Portfolio & Content Packages",
       icon: <FileText className="w-5 h-5" />,
-      url: "/mustache-journey-media-kit.pdf",
+      url: "https://YOUR_NEW_LINK_HERE.com",
       type: 'link'
     },
     {
       title: "UGC Packages & Rates",
       subtitle: "View Deliverables & Pricing",
       icon: <CreditCard className="w-5 h-5" />,
-      url: "https://collabstr.com/mustache.journey",
+      url: "https://collabstr.com/mustachejourney",
       type: 'link'
     },
   ],
   gallery: [
-    { url: "cars.jpg?auto=format&fit=crop&q=80&w=400", label: "Exotic Cars" },
-    { url: "monaco f1.jpg?auto=format&fit=crop&q=80&w=400", label: "F1 Motorsport" },
-    { url: "Raffles.jpg?auto=format&fit=crop&q=80&w=400", label: "Luxury Travel" },
+    { url: "https://www.dropbox.com/scl/fi/xmv928whoehz22ep0znoy/Collabstr-Spec-Car-Video-1.mp4?rlkey=fg80vwvdb2yzgq9u74flvohfb&st=8cojhvyi&raw=1", label: "Exotic Cars" },
+    { url: "https://www.dropbox.com/scl/fi/r2jfi7r5i54cpz93lvtv2/F1-Spec-Reel.mp4?rlkey=3ouvgszu9wnosyqp4c76lwdz2&st=g1nam0dq&raw=1", label: "F1 Motorsport" },
+    { url: "https://www.dropbox.com/scl/fi/7y2sl0teg90qsacf57nzi/Luxury-Hotel-Spec-Reel-1.mp4?rlkey=jftqs9n4x20r84lpllpvyzqxr&st=3nywoor1&raw=1", label: "Luxury Travel" },
   ],
   partners: ["Four Seasons", "Ritz-Carlton", "Collabstr", "Insense"]
 };
@@ -106,9 +106,9 @@ const App = () => {
     <div className="animate-in fade-in duration-700">
       <header className="flex flex-col items-center text-center mb-10">
         <div className="relative mb-8 group cursor-pointer">
-          <div className="absolute -inset-6 bg-gradient-to-tr from-brand-gold/30 to-brand-charcoal/10 rounded-full blur-2xl opacity-40 animate-pulse group-hover:opacity-60 transition-opacity duration-700"></div>
+          <div className="absolute -inset-6 bg-gradient-to-tr from-amber-700/30 to-stone-900/10 rounded-full blur-2xl opacity-40 animate-pulse group-hover:opacity-60 transition-opacity duration-700"></div>
           <div className="relative w-40 h-40 rounded-full bg-white shadow-2xl flex items-center justify-center p-1.5 transition-transform duration-500 group-hover:scale-[1.02]">
-            <div className="w-full h-full rounded-full overflow-hidden border border-brand-stone/30 bg-brand-creme">
+            <div className="w-full h-full rounded-full overflow-hidden border border-stone-200/30 bg-stone-50">
               <img
                 src={DATA.profile.avatar}
                 alt="Profile"
@@ -118,14 +118,14 @@ const App = () => {
             </div>
           </div>
         </div>
-        <h1 className="text-3xl font-serif font-medium tracking-tight mb-2 text-brand-ink uppercase tracking-wider">{DATA.profile.name}</h1>
-        <div className="flex items-center justify-center gap-2 text-brand-gold text-[10px] font-bold tracking-luxury uppercase mb-4">
+        <h1 className="text-3xl font-serif font-medium tracking-tight mb-2 text-stone-900 uppercase">{DATA.profile.name}</h1>
+        <div className="flex items-center justify-center gap-2 text-amber-700 text-[10px] font-bold tracking-[0.2em] uppercase mb-4">
           <MapPin className="w-3 h-3" />
           <span>{DATA.profile.location}</span>
         </div>
         <p className="text-gray-600 leading-relaxed max-w-[280px] mx-auto not-italic text-sm mb-6">"{DATA.profile.tagline}"</p>
-        <div className="w-full p-4 border-y border-brand-stone mb-8">
-           <p className="text-[11px] text-gray-600 leading-relaxed uppercase tracking-luxury italic text-center">{DATA.profile.about}</p>
+        <div className="w-full p-4 border-y border-stone-200 mb-8">
+           <p className="text-[11px] text-gray-600 leading-relaxed uppercase tracking-[0.2em] italic text-center">{DATA.profile.about}</p>
         </div>
       </header>
 
@@ -145,35 +145,35 @@ const App = () => {
               rounded-full border transition-all duration-500 cursor-pointer
               animate-in fade-in slide-in-from-bottom-8 fill-mode-both
               ${link.highlight
-                ? 'bg-brand-charcoal border-brand-charcoal text-white shadow-xl hover:bg-black hover:scale-[1.03]'
-                : 'bg-white border-brand-stone text-brand-ink hover:border-brand-gold hover:shadow-md hover:-translate-y-0.5'
+                ? 'bg-stone-900 border-stone-900 text-white shadow-xl hover:bg-black hover:scale-[1.03]'
+                : 'bg-white border-stone-200 text-stone-900 hover:border-amber-700 hover:shadow-md hover:-translate-y-0.5'
               }
             `}
           >
             <div className="flex items-center gap-4 text-left">
-              <div className={`p-2 rounded-full ${link.highlight ? 'bg-white/10 text-white' : 'bg-brand-creme text-brand-gold'}`}>
+              <div className={`p-2 rounded-full ${link.highlight ? 'bg-white/10 text-white' : 'bg-stone-50 text-amber-700'}`}>
                 {link.icon}
               </div>
               <div>
-                <div className={`font-semibold text-sm tracking-tight ${link.highlight ? 'text-white' : 'text-brand-ink'}`}>
+                <div className={`font-semibold text-sm tracking-tight ${link.highlight ? 'text-white' : 'text-stone-900'}`}>
                   {link.title}
                 </div>
-                <div className={`text-[9px] uppercase tracking-luxury font-bold mt-0.5 ${link.highlight ? 'text-white/60' : 'text-gray-400'}`}>
+                <div className={`text-[9px] uppercase tracking-[0.2em] font-bold mt-0.5 ${link.highlight ? 'text-white/60' : 'text-gray-400'}`}>
                   {link.subtitle}
                 </div>
               </div>
             </div>
-            <ChevronRight className={`w-4 h-4 transition-transform group-hover:translate-x-1 ${link.highlight ? 'text-white/40' : 'text-brand-stone'}`} />
+            <ChevronRight className={`w-4 h-4 transition-transform group-hover:translate-x-1 ${link.highlight ? 'text-white/40' : 'text-stone-200'}`} />
           </button>
         ))}
       </nav>
 
       <section className="mb-14 px-1 animate-in fade-in duration-1000 delay-500 fill-mode-both">
         <div className="flex items-center justify-between mb-5 px-1">
-          <h2 className="text-[10px] font-bold uppercase tracking-luxury text-brand-gold">The Portfolio</h2>
-          <div className="h-[1px] flex-grow ml-4 bg-brand-stone"></div>
+          <h2 className="text-[10px] font-bold uppercase tracking-[0.2em] text-amber-700">The Portfolio</h2>
+          <div className="h-[1px] flex-grow ml-4 bg-stone-200"></div>
         </div>
-        <div className="mb-4 rounded-md overflow-hidden border border-brand-stone shadow-sm bg-black aspect-[9/16]">
+        <div className="mb-4 rounded-md overflow-hidden border border-stone-200 shadow-sm bg-black aspect-[9/16]">
           <video
             src="https://www.dropbox.com/scl/fi/ms2t1bilalhyadzyftgoe/Collab-Intro.mp4?rlkey=zjf2oujfnp6fdcckknah46c3x&raw=1"
             controls
@@ -182,10 +182,17 @@ const App = () => {
           />
         </div>
         <div className="grid grid-cols-3 gap-3">
-          {DATA.gallery.map((img, i) => (
-            <div key={i} className="group relative aspect-[3/4] p-1.5 border border-brand-stone rounded-md overflow-hidden bg-white shadow-sm transition-all hover:border-brand-gold cursor-zoom-in">
-              <div className="w-full h-full overflow-hidden rounded-sm bg-brand-creme">
-                <img src={img.url} className="w-full h-full object-cover grayscale-[15%] group-hover:grayscale-0 transition-all duration-1000 group-hover:scale-110" />
+          {DATA.gallery.map((media, i) => (
+            <div key={i} className="group relative aspect-[3/4] p-1.5 border border-stone-200 rounded-md overflow-hidden bg-white shadow-sm transition-all hover:border-amber-700 cursor-zoom-in">
+              <div className="w-full h-full overflow-hidden rounded-sm bg-stone-50">
+                <video 
+                  src={media.url} 
+                  autoPlay 
+                  loop 
+                  muted 
+                  playsInline
+                  className="w-full h-full object-cover grayscale-[15%] group-hover:grayscale-0 transition-all duration-1000 group-hover:scale-110" 
+                />
               </div>
             </div>
           ))}
@@ -193,10 +200,10 @@ const App = () => {
       </section>
       {/* Partners Section */}
       <section className="mb-14 px-1 text-center animate-in fade-in duration-1000 delay-700 fill-mode-both">
-        <p className="text-[12px] font-bold uppercase tracking-luxury text-gray-500 mb-4">Trusted By</p>
+        <p className="text-[12px] font-bold uppercase tracking-[0.2em] text-gray-500 mb-4">Trusted By</p>
         <div className="flex flex-wrap justify-center gap-x-6 gap-y-2 opacity-50 grayscale">
           {DATA.partners.map((partner, i) => (
-            <span key={i} className="text-[15px] font-serif italic text-brand-ink">{partner}</span>
+            <span key={i} className="text-[15px] font-serif italic text-stone-900">{partner}</span>
           ))}
         </div>
       </section>
@@ -208,7 +215,7 @@ const App = () => {
       <div className="flex justify-between items-center mb-12">
         <button
           onClick={() => setView('home')}
-          className="flex items-center gap-2 text-[10px] font-bold uppercase tracking-luxury text-brand-gold hover:translate-x-[-4px] transition-transform"
+          className="flex items-center gap-2 text-[10px] font-bold uppercase tracking-[0.2em] text-amber-700 hover:translate-x-[-4px] transition-transform"
         >
           <ArrowLeft className="w-3 h-3" /> Back to Profile
         </button>
@@ -216,7 +223,7 @@ const App = () => {
         <a
           href="/mustache-journey-media-kit.pdf"
           download
-          className="flex items-center gap-2 text-[9px] font-bold uppercase tracking-widest text-gray-400 hover:text-brand-gold transition-colors"
+          className="flex items-center gap-2 text-[9px] font-bold uppercase tracking-widest text-gray-400 hover:text-amber-700 transition-colors"
         >
           <Download className="w-3 h-3" /> PDF Version
         </a>
@@ -224,12 +231,12 @@ const App = () => {
 
       <header className="mb-12">
         <h2 className="text-4xl font-serif mb-3 italic">The Media Kit</h2>
-        <p className="text-[9px] font-bold uppercase tracking-ultra text-gray-400">@mustache.journey — Narrative-led integration</p>
+        <p className="text-[9px] font-bold uppercase tracking-[0.3em] text-gray-400">@mustache.journey — Narrative-led integration</p>
       </header>
 
       {/* Brand Overview Section */}
-      <section className="mb-16 border-b border-brand-stone pb-12">
-        <div className="bg-white p-8 rounded-[2rem] border border-brand-stone">
+      <section className="mb-16 border-b border-stone-200 pb-12">
+        <div className="bg-white p-8 rounded-[2rem] border border-stone-200">
            <p className="text-sm leading-relaxed text-gray-600 italic">
              "mustache.journey is a cinematic lifestyle brand documenting luxury travel through the lens of earned confidence and quiet authority. Content crafted for hospitality partners seeking brand-safe storytelling that enhances perception."
            </p>
@@ -239,25 +246,25 @@ const App = () => {
       {/* Dynamic Performance Stats */}
       <div className="grid grid-cols-1 gap-4 mb-16">
         {DATA.stats.map((stat, i) => (
-          <div key={i} className="bg-white border border-brand-stone p-6 rounded-3xl flex items-center justify-between shadow-sm">
+          <div key={i} className="bg-white border border-stone-200 p-6 rounded-3xl flex items-center justify-between shadow-sm">
             <div className="flex items-center gap-4">
-              <div className="p-3 bg-brand-creme rounded-2xl text-brand-gold">{stat.icon}</div>
-              <span className="text-[10px] font-bold uppercase tracking-luxury text-gray-400">{stat.label}</span>
+              <div className="p-3 bg-stone-50 rounded-2xl text-amber-700">{stat.icon}</div>
+              <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-gray-400">{stat.label}</span>
             </div>
-            <span className="text-2xl font-serif text-brand-ink">{stat.value}</span>
+            <span className="text-2xl font-serif text-stone-900">{stat.value}</span>
           </div>
         ))}
       </div>
 
       {/* Signature Storytelling Formats */}
       <section className="mb-16">
-        <h3 className="text-[10px] font-bold uppercase tracking-luxury text-brand-gold mb-6 text-center">Signature Formats</h3>
+        <h3 className="text-[10px] font-bold uppercase tracking-[0.2em] text-amber-700 mb-6 text-center">Signature Formats</h3>
         <div className="space-y-4">
           {DATA.formats.map((format, i) => (
-            <div key={i} className="p-6 bg-brand-creme border border-brand-stone rounded-3xl flex gap-5 items-start">
-               <div className="mt-1 text-brand-gold">{format.icon}</div>
+            <div key={i} className="p-6 bg-stone-50 border border-stone-200 rounded-3xl flex gap-5 items-start">
+               <div className="mt-1 text-amber-700">{format.icon}</div>
                <div>
-                 <h4 className="font-serif text-lg text-brand-ink mb-1">{format.name}</h4>
+                 <h4 className="font-serif text-lg text-stone-900 mb-1">{format.name}</h4>
                  <p className="text-xs text-gray-500 leading-relaxed">{format.desc}</p>
                </div>
             </div>
@@ -266,13 +273,13 @@ const App = () => {
       </section>
 
       {/* Audience Insights */}
-      <section className="mb-16 bg-brand-charcoal text-white p-10 rounded-[3rem] shadow-2xl relative overflow-hidden">
-        <div className="absolute top-0 right-0 w-32 h-32 bg-brand-gold/10 blur-3xl rounded-full"></div>
-        <h3 className="text-[10px] font-bold uppercase tracking-luxury text-brand-gold mb-8">Audience Profile</h3>
+      <section className="mb-16 bg-stone-900 text-white p-10 rounded-[3rem] shadow-2xl relative overflow-hidden">
+        <div className="absolute top-0 right-0 w-32 h-32 bg-amber-700/10 blur-3xl rounded-full"></div>
+        <h3 className="text-[10px] font-bold uppercase tracking-[0.2em] text-amber-700 mb-8">Audience Profile</h3>
         <div className="grid grid-cols-1 gap-8">
            <div>
              <span className="block text-[11px] font-bold text-white/40 uppercase mb-2">Age Range</span>
-             <p className="text-2xl font-serif italic text-brand-gold">{DATA.audience.age}</p>
+             <p className="text-2xl font-serif italic text-amber-700">{DATA.audience.age}</p>
            </div>
            <div>
              <span className="block text-[11px] font-bold text-white/40 uppercase mb-2">Primary Profile</span>
@@ -286,14 +293,14 @@ const App = () => {
       </section>
 
       {/* Brand Safety Policy */}
-      <section className="bg-white border border-brand-stone p-10 rounded-[2.5rem] mb-16 text-center">
-        <ShieldCheck className="w-8 h-8 text-brand-gold mx-auto mb-6" />
+      <section className="bg-white border border-stone-200 p-10 rounded-[2.5rem] mb-16 text-center">
+        <ShieldCheck className="w-8 h-8 text-amber-700 mx-auto mb-6" />
         <h4 className="text-xl font-serif mb-4 italic">Creative & Brand Safety</h4>
         <div className="space-y-3">
           <p className="text-[10px] font-bold uppercase tracking-widest text-gray-400">No forced talking points</p>
-          <div className="h-[1px] w-8 bg-brand-stone mx-auto"></div>
+          <div className="h-[1px] w-8 bg-stone-200 mx-auto"></div>
           <p className="text-[10px] font-bold uppercase tracking-widest text-gray-400">No trend-driven formats</p>
-          <div className="h-[1px] w-8 bg-brand-stone mx-auto"></div>
+          <div className="h-[1px] w-8 bg-stone-200 mx-auto"></div>
           <p className="text-[10px] font-bold uppercase tracking-widest text-gray-400">Asset Utility Focused</p>
         </div>
       </section>
@@ -302,7 +309,7 @@ const App = () => {
       <section className="px-1">
         <button
           onClick={() => setShowContact(true)}
-          className="w-full bg-brand-gold text-white py-5 rounded-full text-[10px] font-bold uppercase tracking-[0.4em] shadow-xl hover:bg-brand-charcoal transition-all flex items-center justify-center gap-3"
+          className="w-full bg-amber-700 text-white py-5 rounded-full text-[10px] font-bold uppercase tracking-[0.4em] shadow-xl hover:bg-stone-900 transition-all flex items-center justify-center gap-3"
         >
           <Award className="w-3 h-3" /> Secure Partnership Details
         </button>
@@ -311,50 +318,50 @@ const App = () => {
   );
 
   return (
-    <div className="min-h-screen bg-brand-creme flex justify-center selection:bg-brand-stone overflow-x-hidden font-sans">
+    <div className="min-h-screen bg-stone-50 flex justify-center selection:bg-stone-200 overflow-x-hidden font-sans">
       <div className="fixed inset-0 opacity-[0.03] pointer-events-none bg-[url('https://www.transparenttextures.com/patterns/linen.png')]"></div>
 
-      <div className={`relative w-full max-w-md bg-brand-paper min-h-screen px-6 pt-16 pb-24 shadow-sm transition-all duration-700 ${showContact ? 'blur-lg scale-95 opacity-40' : 'opacity-100'}`}>
+      <div className={`relative w-full max-w-md bg-white min-h-screen px-6 pt-16 pb-24 shadow-sm transition-all duration-700 ${showContact ? 'blur-lg scale-95 opacity-40' : 'opacity-100'}`}>
         {view === 'home' ? <BioView /> : <MediaKitView />}
 
         <footer className="flex flex-col items-center gap-10 mt-auto pt-10">
           <div className="flex items-center gap-12">
-            <a href={DATA.socials.instagram} target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-brand-gold transition-colors">
+            <a href={DATA.socials.instagram} target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-amber-700 transition-colors">
               <Instagram className="w-6 h-6" />
             </a>
-            <a href={DATA.socials.linkedin} target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-brand-gold transition-colors">
+            <a href={DATA.socials.linkedin} target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-amber-700 transition-colors">
               <Linkedin className="w-6 h-6" />
             </a>
-            <a href={`mailto:${DATA.socials.email}`} className="text-gray-300 hover:text-brand-gold transition-colors">
+            <a href={`mailto:${DATA.socials.email}`} className="text-gray-300 hover:text-amber-700 transition-colors">
               <Mail className="w-6 h-6" />
             </a>
-            <a href={DATA.socials.website} target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-brand-gold transition-colors">
+            <a href={DATA.socials.website} target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-amber-700 transition-colors">
               <Globe className="w-6 h-6" />
             </a>
           </div>
-          <span className="text-[9px] font-bold uppercase tracking-ultra text-gray-400">Mustache Journey © 2026</span>
+          <span className="text-[9px] font-bold uppercase tracking-[0.3em] text-gray-400">Mustache Journey © 2026</span>
         </footer>
       </div>
 
       {showContact && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-brand-charcoal/20 backdrop-blur-md animate-in fade-in duration-500" onClick={() => setShowContact(false)}>
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-stone-900/20 backdrop-blur-md animate-in fade-in duration-500" onClick={() => setShowContact(false)}>
           <div className="bg-white/70 backdrop-blur-2xl w-full max-w-sm rounded-[2.5rem] shadow-2xl overflow-hidden relative border border-white/40 animate-in zoom-in-95 duration-300" onClick={(e) => e.stopPropagation()}>
-            <button onClick={() => setShowContact(false)} className="absolute top-6 right-6 p-2 text-brand-ink/40 hover:text-brand-ink rounded-full transition-all z-10">
+            <button onClick={() => setShowContact(false)} className="absolute top-6 right-6 p-2 text-stone-900/40 hover:text-stone-900 rounded-full transition-all z-10">
               <X className="w-5 h-5" />
             </button>
             <div className="p-10 text-center">
               <h2 className="font-serif text-2xl mb-2">Partnership Inquiry</h2>
-              <p className="text-[10px] text-gray-400 uppercase tracking-luxury mb-8">Confidential Request</p>
+              <p className="text-[10px] text-gray-400 uppercase tracking-[0.2em] mb-8">Confidential Request</p>
               {formStatus === 'success' ? (
                 <div className="py-12 flex flex-col items-center animate-in zoom-in">
-                  <CheckCircle2 className="w-12 h-12 text-brand-gold mb-4" />
+                  <CheckCircle2 className="w-12 h-12 text-amber-700 mb-4" />
                   <p className="text-sm font-serif italic text-gray-600">Dispatch Received.</p>
                 </div>
               ) : (
                 <form className="space-y-6 text-left" onSubmit={handleInquiry}>
-                  <input required className="w-full border-b border-brand-stone/50 py-2 text-sm focus:outline-none bg-transparent" placeholder="Entity Name" />
-                  <input required type="email" className="w-full border-b border-brand-stone/50 py-2 text-sm focus:outline-none bg-transparent" placeholder="Email Address" />
-                  <button className="w-full mt-8 bg-brand-charcoal text-white py-4 rounded-full text-[10px] font-bold uppercase tracking-[0.4em] shadow-xl hover:bg-black transition-all">
+                  <input required className="w-full border-b border-stone-200/50 py-2 text-sm focus:outline-none bg-transparent" placeholder="Entity Name" />
+                  <input required type="email" className="w-full border-b border-stone-200/50 py-2 text-sm focus:outline-none bg-transparent" placeholder="Email Address" />
+                  <button className="w-full mt-8 bg-stone-900 text-white py-4 rounded-full text-[10px] font-bold uppercase tracking-[0.4em] shadow-xl hover:bg-black transition-all">
                     Send Inquiry
                   </button>
                 </form>
