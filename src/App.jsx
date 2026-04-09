@@ -331,7 +331,7 @@ const App = () => {
       <section className="px-1">
         <button
           onClick={() => setShowContact(true)}
-          className="w-full bg-amber-700 text-white py-5 rounded-full text-[10px] font-bold uppercase tracking-[0.4em] shadow-xl hover:bg-stone-900 transition-all flex items-center justify-center gap-3"
+          className="w-full bg-amber-700 text-white py-5 rounded-full text-[10px] font-bold uppercase tracking-[0.4em] shadow-xl hover:bg-stone-900 cursor-pointer transition-all flex items-center justify-center gap-3"
         >
           <Award className="w-3 h-3" /> Secure Partnership Details
         </button>
@@ -384,7 +384,7 @@ const App = () => {
       <section className="px-1">
         <button
           onClick={() => setShowContact(true)}
-          className="w-full bg-stone-900 text-white py-5 rounded-full text-[10px] font-bold uppercase tracking-[0.4em] shadow-xl hover:bg-black transition-all flex items-center justify-center gap-3"
+          className="w-full bg-stone-900 text-white py-5 rounded-full text-[10px] font-bold uppercase tracking-[0.4em] shadow-xl hover:bg-black cursor-pointer transition-all flex items-center justify-center gap-3"
         >
           <Mail className="w-3 h-3" /> Inquire For Dates
         </button>
