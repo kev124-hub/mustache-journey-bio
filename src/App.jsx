@@ -65,7 +65,7 @@ const DATA = {
       title: "Digital Media Kit",
       subtitle: "View Portfolio & Content Packages",
       icon: <FileText className="w-5 h-5" />,
-      url: "https://YOUR_NEW_LINK_HERE.com",
+      url: "/mustache-journey-media-kit.pdf",
       type: 'link'
     },
     {
